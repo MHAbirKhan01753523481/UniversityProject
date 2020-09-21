@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WorkAppp.Models.Metrial>
+﻿@model IEnumerable<WorkAppp.Models.Orderdetails>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,25 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.ItemId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Store)
+                @Html.DisplayNameFor(model => model.ItemPrice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Supply)
+                @Html.DisplayNameFor(model => model.Quantity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Unit)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalQuantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AvailableQuantity)
+                @Html.DisplayNameFor(model => model.OrderR)
             </th>
             <th></th>
         </tr>
@@ -41,25 +32,16 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    @Html.DisplayFor(modelItem => item.ItemId)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Store)
+                    @Html.DisplayFor(modelItem => item.ItemPrice)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Supply)
+                    @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Unit)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TotalQuantity)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AvailableQuantity)
+                    @Html.DisplayFor(modelItem => item.OrderR.Id)
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
