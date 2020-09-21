@@ -8,9 +8,6 @@
 
 <p>
     <a asp-action="Create">Create New</a>
-    <br />
-    <br />
-    <input type="submit" name="name" class="text-right btn btn-primary" value="Cheeck out" />
 </p>
 <table class="table">
     <thead>
@@ -24,7 +21,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Quantity)
             </th>
-            @*<th>
+            <th>
                 @Html.DisplayNameFor(model => model.DiscountPrice)
             </th>
             <th>
@@ -32,47 +29,38 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SubCategory)
-            </th>*@
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-        <Form asp-controller="SoppingBag" asp-action="Add" method="post">
             <tr>
                 <td>
-                    <img src="~/images/g2.jpg" class="img-circle img-rounded" style="height:100px;" /><br />
                     @Html.DisplayFor(modelItem => item.ItemName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @*@Html.DisplayTextFor(modelItem => item.Quantity)*@
-                    <input type="number" name="Quantity" class="form-control" value="1" />
+                    @Html.DisplayFor(modelItem => item.Quantity)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DiscountPrice)
                 </td>
-                @*<td>
-                @Html.DisplayFor(modelItem => item.Details)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubCategory.SubCategoryName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-                *@
-
                 <td>
-                    <input type="submit" name="name" class="form-control btn btn-primary" value="Add Item" />
+                    @Html.DisplayFor(modelItem => item.Details)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubCategory.SubCategoryName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
-        </Form>
         }
     </tbody>
 </table>
