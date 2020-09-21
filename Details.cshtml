@@ -1,4 +1,4 @@
-﻿@model WorkAppp.Models.Review
+﻿@model WorkAppp.Models.SubCategory
 
 @{
     ViewData["Title"] = "Details";
@@ -7,26 +7,20 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Review</h4>
+    <h4>SubCategory</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.SubCategoryName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.SubCategoryName)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.ReviewStatus)
+            @Html.DisplayNameFor(model => model.Category)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ReviewStatus)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Items)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Items.ItemName)
+            @Html.DisplayFor(model => model.Category.CategoryName)
         </dd>
     </dl>
 </div>
