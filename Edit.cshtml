@@ -1,0 +1,51 @@
+﻿@model WorkAppp.Models.Category
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <img class="img-fluid" src="~/images/h6.png" alt="Chania" width="1130" height="300">
+    </div>
+</div>
+<h4 style="font-style:italic;text-shadow:2px 1px gray;color:red; font-size:24px;"><marquee>New Food Offer Discount (30%) Pizza and Bargur</marquee></h4>
+<div class="row">
+    
+    <div class="col-md-4 text-primary">
+        <br />
+        <form style="font-size:18px;" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="CategoryName" class="control-label"></label>
+                <input asp-for="CategoryName" class="form-control" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+               
+                    <a class="btn btn-primary text-primary" asp-action="Index">Back to List</a>
+              
+
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-4">
+        <h3 class="text-center text-danger"> Burgur</h3>
+        <img class="img-fluid" src="~/images/h2.jpeg" alt="Chania" width="355" height="200">
+        <p class="text-justify">
+            but thanks to the flying popularity that this flavoursome drink is now available everywhere in the world. Bit of a misnomer, this
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h3 class="text-center text-danger"> Burgur</h3>
+        <img class="img-fluid" src="~/images/h2.jpeg" alt="Chania" width="355" height="200">
+        <p class="text-justify">
+            but thanks to the flying popularity that this flavoursome drink is now available everywhere in the world. Bit of a misnomer, this
+        </p>
+    </div>
+</div>
+
