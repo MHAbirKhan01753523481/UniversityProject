@@ -1,56 +1,46 @@
-﻿@model IEnumerable<WorkAppp.Models.Category>
+﻿@model IEnumerable<WorkAppp.Models.Employee>
 
 @{
     ViewData["Title"] = "Index";
 }
-<div class="row">
-    <div class="col-md-12">
-        <img class="img-fluid" src="~/images/h6.png" alt="Chania" width="1130" height="300">
-    </div>
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Present)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Present)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    @*<a asp-controller="Employees" asp-action="Index">Back to List</a>*@
+    <a class="btn btn-primary" asp-controller="Account" asp-action="Admin">Back to Dashboard</a>
 </div>
-
-
-<div class="row">
-    <div class="col-md-12">
-        <h2 class="text-primary">Product Category List</h2>
-        @*<p>
-                <a class="btn btn-primary" asp-action="Create">Create New</a>
-            </p>*@
-
-        <table style="font-size:16px;" class="table text-primary">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CategoryName)
-                    </th>
-                    <th>
-                        Operation
-                    </th>
-                    <th>
-                        <p>
-                            <a class="btn btn-primary" asp-action="Create">Create New</a>
-                        </p>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CategoryName)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                        </td>
-                        <td></td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-
-    </div>
-</div>
-<a class="btn btn-primary" asp-controller="Account" asp-action="Admin">Back to Dashboard</a>
